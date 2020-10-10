@@ -1,0 +1,23 @@
+img {
+    border-radius: 50%;
+    width: 200px;
+    height: auto;
+}
+
+.basho {
+    position: absolute;
+    left: 0px;
+}
+
+.yosa {
+    position: absolute;
+    left: 400px;
+}
+
+@media screen and (max-width: 400px){
+    .yosa {
+        position: absolute;
+        top:200px;
+        left:100px;
+    }
+}

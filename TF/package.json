@@ -1,0 +1,18 @@
+{
+  "name": "tf",
+  "version": "1.0.0",
+  "description": "Simple program using TF",
+  "main": "simple.js",
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^2.4.0",
+    "canvas": "^2.6.1",
+    "jimp": "^0.16.1",
+    "sharp": "^0.26.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

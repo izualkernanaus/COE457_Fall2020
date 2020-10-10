@@ -1,0 +1,17 @@
+
+.title{
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 120%;
+    color: #8675a9;
+}
+.poet{
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 80%;
+    font-style: italic;
+    color:#c3aed6;
+}
+.haiku{
+    font-family: 'Nanum Brush Script', cursive;
+    line-height: 0.5;
+    color: #efbbcf;
+}
