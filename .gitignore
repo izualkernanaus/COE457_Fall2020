@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Also see: https://www.pluralsight.com/guides/how-to-use-gitignore-file
 
 # Run this after changing .gitignore 
@@ -26,3 +27,6 @@ TF/node_modules/
 # dotenv environment variables file
 .env
 
+=======
+/TF/node_modules
+>>>>>>> 90cf90bc9155f56ab2f34c6b088ba9c4ad78b8fc
