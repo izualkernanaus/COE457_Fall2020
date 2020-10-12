@@ -24,13 +24,25 @@ function show_them(){
 function show_nicely(){
     attribs = get_attributes(".special");
    
+    // string to create list for innerHTML
+
     to_display = "<ul>";  
+    
+    // go through the list of attributes <att, value>
+    // create list elements for each attribute
+
     for (var key in attribs) {
         to_display = to_display + "<li>" + key + "=" +attribs[key]+ "</li>";
     }
     to_display = to_display+"</ul>";
     //console.log(to_display);
+
+    // find the node to update 
+    // 
     node = document.querySelector("#show_attributes");
+
+    // innerHTML to add it 
+    
     node.innerHTML = to_display;
 }
 
