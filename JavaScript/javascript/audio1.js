@@ -15,14 +15,24 @@ if (navigator.mediaDevices) {
   const downloadLink = document.getElementById('download');
   const stopButton = document.getElementById('stop');
   stopButton.setAttribute("style","visibility: hidden");
+  // querySeletor -- querySelector('#start')
   const startButton = document.getElementById('start');
   const timeDisplay = document.getElementById('timer');
   timeDisplay.setAttribute("style","visibility: hidden");
   console.log(downloadLink);
   console.log(stopButton);
   
+  // used to specify whether audio or video or both
   var constraints = { audio: true};
+
+  // used to save my audio data in chunks. 
+
   var chunks = [];
+
+  // .then -- after you grab teh mediaDevices, .then call the function that comes after.
+  // asynchronous API for javascript
+  // mediaDevices.getUserMedia will connect to a mic. 
+  // In this case the default mic. 
 
   navigator.mediaDevices.getUserMedia(constraints)
   .then(function(stream) {
@@ -32,6 +42,8 @@ if (navigator.mediaDevices) {
     console.log(stream);
     
     startButton.onclick = function() {
+
+      // start recording
       mediaRecorder.start();
       console.log(mediaRecorder.state);
       console.log("recorder started");
@@ -122,11 +134,18 @@ if (navigator.mediaDevices) {
 
       // save audio in a block
       var blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
+
+      // clear array for next recording. 
+
       chunks = [];
+      
+      // tie the audio blob so we can play it. 
+
       var audioURL = URL.createObjectURL(blob);
       audio.src = audioURL;
       console.log("recorder stopped");
       
+      // <audio tag>  <audio href = "...">
       // save blob to a wave file 
       download.href = audioURL;
       download.setAttribute("id", "download");
