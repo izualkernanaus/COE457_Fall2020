@@ -34,14 +34,19 @@ function flip() {
     }
 }
 
+// this function adds the call-back flip 
+// on the click event of the element 
+// with class "pic"
+
 function add_listener() {
     $(".pic").click(flip);
 }
 
 function add_keypress() {
-    $(".pic").keydown(
+    $("#which").keydown(
         function(event) {
             console.log(event.keyCode);
+            // is it 's'
             if (event.keyCode == 83) {
                 // set the .pic src to img/sm.jpg
                 $(".pic").attr("src", "img/sm.jpg");
