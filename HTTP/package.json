@@ -1,0 +1,17 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "example HTTP server ",
+    "main": "http.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "http"
+    ],
+    "author": "Imran Zualkernan",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
