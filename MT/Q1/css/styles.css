@@ -1,0 +1,93 @@
+img{
+    border-radius: 50%;
+    width: 10rem;
+    height: auto;
+    margin-left: 30%;
+    float:  auto ;
+}
+.colors {
+color:#1aa6b7;
+color:#ff414d;
+color:#f56a79;
+color: #d9ecf2;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+.fancy {
+    font-family:fantasy;
+    color: #f56a79;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+a:hover {
+    color:#ff414d;
+}
+
+.navbar-light {
+    color:#1aa6b7;
+}
+.poet {
+    font-family:fantasy;
+    color: #f56a79;
+    font-size: 4rem;
+}
+
+.japanese {
+    color:#1aa6b7;
+}
+
+.container-fluid{
+    background-color: #d9ecf2 ;
+    padding: 2% 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    font-size: 1rem;
+    color: #1aa6b7;
+}
+
+.fa-music {
+    color: #f56a79;
+}
+
+.carousel-item {
+    padding: 3% 15%;
+}
+
+.card-img-top{
+    border-radius: 50%;
+    width: 10rem;
+    height: auto;
+    margin-left:0%;
+}
+
+.logo-image {
+    width: 6rem;
+    height: auto;
+    border-radius: 0%;
+}
+
+.padded {
+    padding: 5%;
+}
+
+iframe{
+    width:auto;
+    height: auto;
+}
+audio {
+    background-color: #ff414d;
+    color: #d9ecf2;
+}
+
+.colorbackground{
+   background-color: #d9ecf2
+}

@@ -4,7 +4,7 @@ app.set('port', process.env.PORT || 1234);
 
 app.get('/', function(req, res) {
     res.type('application/json');
-    res.status(200).json({ "foo": "bar" });
+    res.status(200).json({ "AUS": "Happy Place" });
 });
 
 app.listen(app.get('port'), function() {
