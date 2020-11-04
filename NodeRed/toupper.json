@@ -1,0 +1,1 @@
+[{"id":"c0eda928.545fe8","type":"function","z":"5fe377eb.b601c8","name":"toUpper","func":"var payload = msg.payload;\nmsg.payload = msg.payload.toUpperCase();\nreturn msg;","outputs":1,"noerr":0,"initialize":"","finalize":"","x":330,"y":260,"wires":[["9d74bf27.596e"]]}]
