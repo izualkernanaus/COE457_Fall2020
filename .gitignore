@@ -18,6 +18,9 @@
 # For mac
 .DS_Store
 
+# all node modules
+node_modules/
+
 # specific directories
 TF/node_modules/
 
