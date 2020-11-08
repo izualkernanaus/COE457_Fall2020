@@ -4,10 +4,13 @@ var app = express();
 
 // speficy the port to listen to. 
 app.set('port', process.env.PORT || 1234);
+
+// use the cookieParser middleware
 app.use(cookieParser());
 
 app.get('/', function(req, res){
-   res.cookie('cheese', 'burrata').send('cookie set'); //Sets name = express
+   res.cookie('beef', "pepper");
+   res.cookie('cheese', 'burrata').send('<html> <p> cheese cookie </p> </html>'); //Sets name = express
 });
 
 // launch 

@@ -1,0 +1,14 @@
+<head>
+	<!-- Load plotly.js into the DOM -->
+	<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+</head>
+
+<body>
+    <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/wifi.js"></script>
+    <script>
+        setInterval(function(){
+            grab_and_plot_wifi();},2000)
+    </script>
+</body>

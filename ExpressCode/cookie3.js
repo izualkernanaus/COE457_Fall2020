@@ -14,6 +14,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/no_cheese', function(req, res){
+   // telling the browser to clear the cookie with name = cheese
    res.clearCookie('cheese');
    res.send('<html><hr>no more cheese for you my friend<hr><img src="img/burrata.jpg"></html>');   
  });
