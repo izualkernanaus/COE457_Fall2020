@@ -1,10 +1,15 @@
 function timeout(time) {
+    
     let p = new Promise((resolve, reject) => {
+        
+        // setup a timer -- has a call-back. 
         setTimeout(() => {
             c_time = new Date().getTime();
             resolve(c_time);
         }, time);
     })
+
+    //return promise
     return p;
 };
 

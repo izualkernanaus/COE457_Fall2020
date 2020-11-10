@@ -1,0 +1,18 @@
+<head>
+    <!-- Load plotly.js into the DOM -->
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <link rel="stylesheet" href="/css/wifi.css">
+</head>
+
+<body>
+    <div id='live'>
+    </div>
+    <hr>
+    <button class="nice" type="button" id="btn">Show History</button>
+    <label class="nicely" for="time_min">Time (Minutes)</label>
+    <input class="nicely" type="text" id="time_min" name="time_min" value="10"><br>
+    <div id="history">
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/wifi.js"></script>
+</body>
