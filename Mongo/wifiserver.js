@@ -1,5 +1,7 @@
 const si = require('systeminformation');
 
+// this returns a Promise 
+
 function get_wifi(){
     return new Promise(function(resolve, reject){
        
@@ -21,7 +23,7 @@ function get_wifi(){
             var wifi = wifi.filter(function (el) {
                 return el != null;
             });
-            resolve(wifi);
+            resolve(wifi); // array of ssid, quality
         });
     })
 }

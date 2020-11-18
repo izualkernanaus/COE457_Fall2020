@@ -6,4 +6,6 @@ function inc(x) {
 }
 
 inc(10).then(function(x){console.log(x)})
-inc(10).then().then().then(function(x){console.log(x)})
+
+// what will this print?
+inc(10).then().then(function(x){console.log(x)}).then(function(x){console.log(x)})

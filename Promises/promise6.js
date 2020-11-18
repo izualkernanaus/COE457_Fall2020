@@ -9,10 +9,10 @@ function inc(x) {
 inc(10)
     .then(function (x) {
         console.log(x);
-        return x;
+        return x+1;
     })
     .then(function (x) {
         console.log(x);
-        return x;
+        return x+2;
     })  // x is used up so cannot propagate.
     .then(function (x) { console.log(x) })

@@ -42,8 +42,10 @@ const WifiQuality = mongoose.model("WifiQ", wifiSchema);
 var express = require('express');
 const e = require('express');
 var app = express();
-app.set('port', process.env.PORT || 1234);
+app.set('port', process.env.PORT || 5555);
 app.use(express.static(__dirname + '/public'));
+
+// grabing the data in real time and saving it to the DB
 
 app.get('/', function(req, res) {
     res.type('application/json');
@@ -61,14 +63,27 @@ app.get('/', function(req, res) {
         res.send(msg)});
 });
 
+
 // using route paramters 
 app.get('/past/:time_min', function(req, res) {
         res.type('application/json'); 
         
+        // localhost:/past/60
+        // time_min (60 minutes) it will show up in 
+        // req.params.time_min
+
         time_ms = req.params.time_min*60000; // in milli-seconds. 
+
+        // now 
         now = new Date();
+
+        // how far was 60 minutes from now 
+
         past = now - time_ms;
         console.log(past);
+
+        // grab all the wifi/qualituy pair where 
+        // date >= past
 
         WifiQuality.find({date: {$gte: past}},function(err, result){
             if(err){

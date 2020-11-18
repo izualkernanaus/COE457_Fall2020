@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/wifi', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost:27017/wifi1', {useNewUrlParser: true, useUnifiedTopology: true});
 
 // we create a scheme first 
 const wifiSchema = new mongoose.Schema({
@@ -19,6 +19,7 @@ WifiQuality.find(function(err, wifiqs)
         {
             wifiqs.forEach(function(element){
                 console.log(element._id);
+                console.log(element.date);
             });
         }
 

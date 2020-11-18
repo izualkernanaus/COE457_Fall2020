@@ -42,7 +42,7 @@ const WifiQuality = mongoose.model("WifiQ", wifiSchema);
 var express = require('express');
 const e = require('express');
 var app = express();
-app.set('port', process.env.PORT || 1234);
+app.set('port', process.env.PORT || 3211);
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {

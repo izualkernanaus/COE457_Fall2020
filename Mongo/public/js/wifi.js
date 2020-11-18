@@ -74,16 +74,19 @@ function plot_wifi(x, y) {
   };
 
   var data = [trace2];
+  
+  // live is the name of the div to plot in
   Plotly.newPlot('live', data, layout);
 }
 
+// grab real data from the server
 
 function grab_and_plot_wifi() {
   // use AJAX 
   $.ajax({
     type: "GET",
     dataType: 'JSON',
-    url: "http://localhost:1234",
+    url: "http://localhost:5555",
   }).done(function (response) {
     console.log("success");
     wifi_x = new Array();
@@ -104,7 +107,7 @@ function grab_and_plot_history(time_mins) {
   $.ajax({
     type: "GET",
     dataType: 'JSON',
-    url: "http://localhost:1234/past/" + time_mins,
+    url: "http://localhost:5555/past/" + time_mins,
   }).done(function (response) {
     console.log("success");
     if (response.length > 0) {
