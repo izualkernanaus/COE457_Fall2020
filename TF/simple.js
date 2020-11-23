@@ -4,16 +4,53 @@
  * Script adatapted from
  * https://github.com/tensorflow/tfjs-examples
  * https://groups.google.com/a/tensorflow.org/forum/#!forum/tfjs
- * @author Imran Zualkernan (izualkenan@aus.eedu)
+ * 
+ * @author Imran Zualkernan (izualkernan@aus.eedu)
  * @copyright 2020 Imran Zualkernan
  */
 
+// this will resize the image to 224x224 because this is required
+// by the teachable machine.
+
+function resize() {
+  return new Promise(function (resolve, reject) {
+    // print the attributes of the image 
+    im.identify(['-format', '%wx%h', './sample_images/11.jpg'], function (err, output) {
+      if (err) reject(err);
+      console.log('dimensions of original image (w x h): ' + output);
+    });
+
+    // resize to 224 x 224 and save it 
+    im.resize({
+      srcPath: './sample_images/11.jpg',
+      dstPath: './img.jpg',
+      width: 224,
+      height: 224
+    }, function (err, stdout, stderr) {
+      if (err) reject(error);
+      console.log('resized to 224x224px');
+      resolve(true);
+    });
+  })
+}
+
+// // mapping of class labels
+ const labels = [
+  'sparrow',
+  'robin'];
+
+// npm install these two modules into your project directory
 const tf = require('@tensorflow/tfjs-node')
 const { createCanvas, Image } = require('canvas')
+// also do brew install imagemagick
+var im = require('imagemagick');
 
 var model, image
-const model_path = './model/model.savedmodel'
-// const labels = require('./model/model.savedmodel/assets/labels.json');
+// change the model path to where you extracted the SavedModel
+// please make sure it is the SavedModel
+
+const model_path = './public/converted_savedmodel/model.savedmodel'
+console.log(model_path);
 
 // First read the model from the SavedModel Directory
 tf.node
@@ -25,42 +62,52 @@ tf.node
   })
   .then(modelInfo => {
     // We need to know the Input and the Output Names
+    // we will need these to figure out what the input and 
+    // output names are for later in this code. 
+
     console.log(modelInfo)
 
-    // Sample input to read. Please make sure that the
-    // dimensions are the same as specified in the model
-    // typically 200x200 with 3 color channels by default
 
-    image = require('fs').readFileSync('./happy_dog_200.jpg')
-    const uint8array = new Uint8Array(image)
-    // Decode the image into a tensor. Will read jpeg, png etc.
-    console.log(tf.cast(tf.node.decodeImage(uint8array), 'float32'))
+    resize().
+      then(function (result) {
 
-    // Since decodeImage returns 'int32' it must be
-    // converted to 'float32' for the model to run.
+        // Sample input to read. Please make sure that the
+        // dimensions are the same as specified in the model
+        // typically 224x224 with 3 color channels by default
 
-    return tf.cast(tf.node.decodeImage(uint8array), 'float32')
-  })
-  .then(imageTensor => {
-    const input = imageTensor.expandDims(0)
+        image = require('fs').readFileSync('./img.jpg')
+        const uint8array = new Uint8Array(image)
+        // Decode the image into a tensor. Will read jpeg, png etc.
+        console.log(tf.cast(tf.node.decodeImage(uint8array), 'float32'))
 
-    const startTime = tf.util.now()
+        // Since decodeImage returns 'int32' it must be
+        // converted to 'float32' for the model to run
 
-    // Feed the image tensor into the model for inference.
-    // Please note that inputNodeNames contains
-    // the name of your input (e.g.,sequential_1_input )
-    let outputTensor = model.predict({ sequential_1_input: input })
+        return tf.cast(tf.node.decodeImage(uint8array), 'float32')
 
-    console.log(outputTensor)
 
-    // grab the output and convert it into an array
-    // note that the name sequential_3 is derived
-    // from the TFSavedmodel field outputNodeNames
+      })
+      .then(imageTensor => {
+        inputTensor = imageTensor.expandDims(0)
+        console.log('inputTensor\n'+inputTensor);
 
-    outputTensor.sequential_3.array()
-     .then(array => {
-         console.log(array)
-         const endTime = tf.util.now()
-        console.log("inference time:"+(endTime-startTime)/1000+" seconds")})
-  
-})
+        // normalize and divide by 255 (very important)
+        inputTensor = inputTensor.div(255);
+
+        const startTime = tf.util.now();
+
+        // Feed the image tensor into the model for inference.
+        let outputTensor = model.predict(inputTensor);
+
+        console.log('outputTensor\n'+outputTensor);
+
+        // grab the output and convert it into an array
+
+        const scores = outputTensor.arraySync()[0];
+        console.log(scores);
+        
+        const endTime = tf.util.now()
+        console.log("inference time:" + (endTime - startTime) / 1000 + " seconds")
+
+      })
+  });
