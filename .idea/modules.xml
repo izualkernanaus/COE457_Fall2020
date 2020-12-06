@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/COE457.iml" filepath="$PROJECT_DIR$/.idea/COE457.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter/music_app/ios/.symlinks/plugins/assets_audio_player/android/android.iml" filepath="$PROJECT_DIR$/flutter/music_app/ios/.symlinks/plugins/assets_audio_player/android/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter/music_app/android/android1.iml" filepath="$PROJECT_DIR$/flutter/music_app/android/android1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter/music_app/ios/.symlinks/plugins/path_provider/example/android/app/src/androidTest/androidTest.iml" filepath="$PROJECT_DIR$/flutter/music_app/ios/.symlinks/plugins/path_provider/example/android/app/src/androidTest/androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter/music_app/ios/.symlinks/plugins/assets_audio_player/assets_audio_player_web/assets_audio_player_web.iml" filepath="$PROJECT_DIR$/flutter/music_app/ios/.symlinks/plugins/assets_audio_player/assets_audio_player_web/assets_audio_player_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter/music_app/ios/.symlinks/plugins/assets_audio_player_web/assets_audio_player_web1.iml" filepath="$PROJECT_DIR$/flutter/music_app/ios/.symlinks/plugins/assets_audio_player_web/assets_audio_player_web1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter/music_app/ios/.symlinks/plugins/assets_audio_player/example/example.iml" filepath="$PROJECT_DIR$/flutter/music_app/ios/.symlinks/plugins/assets_audio_player/example/example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter/flutter_app/flutter_app.iml" filepath="$PROJECT_DIR$/flutter/flutter_app/flutter_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter/music_app/ios/.symlinks/plugins/path_provider/example/android/app/src/main/main.iml" filepath="$PROJECT_DIR$/flutter/music_app/ios/.symlinks/plugins/path_provider/example/android/app/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter/music_app/ios/.symlinks/plugins/path_provider/android/src/main/main1.iml" filepath="$PROJECT_DIR$/flutter/music_app/ios/.symlinks/plugins/path_provider/android/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter/my_app/my_app.iml" filepath="$PROJECT_DIR$/flutter/my_app/my_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter/poetry_app/poetry_app.iml" filepath="$PROJECT_DIR$/flutter/poetry_app/poetry_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter/music_app/ios/.symlinks/plugins/path_provider/android/src/test/test.iml" filepath="$PROJECT_DIR$/flutter/music_app/ios/.symlinks/plugins/path_provider/android/src/test/test.iml" />
+    </modules>
+  </component>
+</project>

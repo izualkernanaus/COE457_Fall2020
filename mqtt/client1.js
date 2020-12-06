@@ -1,5 +1,11 @@
 var mqtt = require('mqtt')
-var client  = mqtt.connect('ws://localhost:9001')
+
+// to connect using MQTT/WebSocketss use ws://ws://localhost:9001
+// var client  = mqtt.connect('ws://localhost:9001')
+
+// to connect directly using MQTT only -- use mqtt://localhost:1883
+var client  = mqtt.connect('mqtt://localhost:1883')
+
 
 client.on('connect', function () {
   client.subscribe('coe457/hello', function (err) {

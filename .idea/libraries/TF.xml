@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="TF">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TF/converted_tflite.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TF/converted_tflite_quantized.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TF/converted_edgetpu.zip!/" />
+      <root url="jar://$PROJECT_DIR$/TF/converted_keras.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

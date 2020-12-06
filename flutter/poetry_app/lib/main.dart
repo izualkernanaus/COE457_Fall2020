@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(15),
-              child: Text('Khalil Gibran', style: TextStyle(fontStyle: FontStyle.italic, color: Colors.redAccent.withOpacity(0.6)),textAlign: TextAlign.center),
+              child: Text('Khalil Gibran', style: TextStyle(fontStyle: FontStyle.italic, fontSize: 20, color: Colors.redAccent.withOpacity(0.6)),textAlign: TextAlign.center),
             ),
             GestureDetector(
               onTap: () {
@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                  // image: NetworkImage('https://i.pinimg.com/originals/f5/94/12/f59412c97043ebc9b18a0e8d1789123d.jpg'),
+                  //image: NetworkImage('https://i.pinimg.com/originals/f5/94/12/f59412c97043ebc9b18a0e8d1789123d.jpg'),
                   image: AssetImage('images/gibran.jpg'),
                 ),
               ),
@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 150,
               child: Directionality(
                    textDirection: TextDirection.rtl,
-                  child: Text('$currentVerse', style: TextStyle(fontStyle: FontStyle.italic, color: _v_color)),
+                  child: Text('$currentVerse', style: TextStyle(fontStyle: FontStyle.italic, fontSize: 20, color: _v_color)),
               ),
             )]),
           ],
@@ -106,58 +106,3 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class SecondPage extends StatelessWidget {
-  //SecondPage({Key key, this.title}) : super(key: key);
-  //final String title;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Second Page'),
-      ),
-      body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            RaisedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text('Go Back', style: TextStyle(fontSize: 20)),
-            ),
-            RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ThirdPage()),
-                );
-              },
-              child: const Text(
-                  'Go to Third Page', style: TextStyle(fontSize: 20)),
-            ),
-          ]),
-    ); // Pop from stack
-  }
-}
-
-class ThirdPage extends StatelessWidget {
-  ThirdPage({Key key, this.title}) : super(key: key);
-  final String title;
-  @override
-  Widget build (BuildContext context) {
-    print(title);
-    return  Scaffold(
-        appBar:  AppBar(
-          title: Text('Third Page'),
-        ),
-        body: RaisedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) =>  MyHomePage()),
-            );
-          },
-          child: const Text('Go Back', style: TextStyle(fontSize: 20)),
-        )
-    );// Pop from stack
-  }
-}

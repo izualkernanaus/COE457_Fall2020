@@ -6,7 +6,7 @@ var wsport = 8000 // port for above
 // create client using the Paho library
 var client = new Paho.MQTT.Client(wsbroker, wsport,
     "myclientid_" + parseInt(Math.random() * 100, 10));
-client.onConnectionLost = function (responseObject) {
+    client.onConnectionLost = function (responseObject) {
     console.log("connection lost: " + responseObject.errorMessage);
 };
 client.onMessageArrived = function (message) {
