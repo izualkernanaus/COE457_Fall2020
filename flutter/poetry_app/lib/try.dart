@@ -36,5 +36,4 @@ main(){
    print(g.nextVerse());
   }
 }
-
- */
+*/

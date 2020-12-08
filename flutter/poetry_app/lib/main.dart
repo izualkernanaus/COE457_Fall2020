@@ -54,10 +54,10 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Row(
                 children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(15),
-              child: Text('Khalil Gibran', style: TextStyle(fontStyle: FontStyle.italic, fontSize: 20, color: Colors.redAccent.withOpacity(0.6)),textAlign: TextAlign.center),
-            ),
+                  Padding(
+                    padding: const EdgeInsets.all(15),
+                    child: Text('Khalil Gibran', style: TextStyle(fontStyle: FontStyle.italic, fontSize: 20, color: Colors.redAccent.withOpacity(0.6)),textAlign: TextAlign.center),
+                  ),
             GestureDetector(
               onTap: () {
                 nextVerse();
@@ -82,13 +82,18 @@ class _MyHomePageState extends State<MyHomePage> {
             )]),
           Row(
           children: <Widget>[
-            Container(
-              margin: EdgeInsets.fromLTRB(30, 10, 30, 10),
-              width: 300,
-              height: 150,
-              child: Directionality(
-                   textDirection: TextDirection.rtl,
-                  child: Text('$currentVerse', style: TextStyle(fontStyle: FontStyle.italic, fontSize: 20, color: _v_color)),
+            GestureDetector(
+              onTap: () {
+                print("is priyanka right");
+              },
+              child: Container(
+                margin: EdgeInsets.fromLTRB(30, 10, 30, 10),
+                width: 300,
+                height: 150,
+                child: Directionality(
+                     textDirection: TextDirection.rtl,
+                    child: Text('$currentVerse', style: TextStyle(fontStyle: FontStyle.italic, fontSize: 20, color: _v_color)),
+                ),
               ),
             )]),
           ],
