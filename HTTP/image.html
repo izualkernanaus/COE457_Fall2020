@@ -1,0 +1,47 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <button type="button" id="grab">star wars</button>
+    <img id="picture"></img>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function fetch() {
+            // use AJAX 
+            // Need to get the image like a blob.
+            console.log("fetch");
+            $.ajax({
+                type: "GET",
+                cache:false,
+                xhrFields:{
+                    responseType: 'blob'
+                },
+                url: "http://localhost:1234",
+                success: function (response) {
+                    console.log(response);
+                    if (response != 0) {
+                        $("#picture")
+                            .attr('src', response)
+                            .attr('width','400');
+                        $("#picture").show(); // Display image element
+                    } else {
+                        alert('file not gotten');
+                    }
+                },
+                error: function(response){
+                    console.log("error in ajax");
+                }
+            })
+            }
+
+            $(document).ready(function () {
+                console.log("ready!");
+                $("#grab").click(fetch);
+            });
+    </script>
+
+    <body>
+
+</html>

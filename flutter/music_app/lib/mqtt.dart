@@ -16,6 +16,9 @@ class MQTTClient {
   onMsgType onMessage;
 
   // non-default constructor
+  // the third argument is a call-back odf type onMsgType
+  // typedef onMsgType = void Function(String topic, String payload);
+
   MQTTClient(broker, port,onMsgType customFn) {
     print('trying to connect to broker'+broker);
     print('on port'+'port');
@@ -118,6 +121,12 @@ class MQTTClient {
     client.unsubscribe(topic);
   }
 
+  // the third argument is Qos which can be any one of
+  //  can specify Qos using
+  //   // MqttQos.atLeastOnce  0
+  //   // MqttQos.atMostOnce   1
+  //   // MqttQos.exactlyOnce  2
+
   void publish(topic, payload, Qos) {
     final builder = MqttClientPayloadBuilder();
     builder.addString(payload);
@@ -145,9 +154,9 @@ void main() async {
   // MqttQos.exactlyOnce
 
   // topic and Qos
-  cl.subscribe('coe457/hello', null);
+  cl.subscribe('coe457/hello', MqttQos.exactlyOnce);
   // topic, payload, and Qos
-  cl.publish('coe457/hello','hello from flutter',null);
+  cl.publish('coe457/hello','hello from flutter', MqttQos.exactlyOnce);
 }
 
 /* */
